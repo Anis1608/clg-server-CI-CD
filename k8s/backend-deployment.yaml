@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockvote-backend
+  namespace: "2401098"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blockvote-backend
+  template:
+    metadata:
+      labels:
+        app: blockvote-backend
+    spec:
+      imagePullSecrets:
+        - name: nexus-secret
+      containers:
+        - name: backend
+          image: 127.0.0.1:30085/anis-project/blockvote-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: STELLAR_SERVER
+              value: "https://horizon-testnet.stellar.org"
+            - name: MONGO_URI
+              value: "mongodb+srv://Anis45:Aniskhan1608@cluster0.hbk277x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+            - name: CORS_ORIGIN
+              value: "http://blockvote.imcc.com"
+            - name: SECRET_KEY
+              value: "Aniskhan_BlockVote"
+            - name: REDIS_URL
+              value: "redis://default:Aniskhan1608%40@redis-13772.c301.ap-south-1-1.ec2.redns.redis-cloud.com:13772"
+            - name: EMAIL_USER
+              value: "anis1098imcc@gmail.com"
+            - name: EMAIL_PASSWORD
+              value: "ipcd ewkx gdfh irxy"
