@@ -130,7 +130,7 @@ spec:
             steps {
                 container('kubectl') {
                     script {
-                        dir('k8s-deployment') {
+                        dir('k8s') {
                             sh '''
                                 echo "Applying MERN Kubernetes deployment..."
                                 kubectl apply -f backend-deployment.yaml
