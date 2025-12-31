@@ -137,6 +137,9 @@ spec:
                                 kubectl apply -f backend-service.yaml
                                 kubectl apply -f frontend-deployment.yaml
                                 kubectl apply -f frontend-service.yaml
+                                
+                                echo "Refreshing Ingress (Cleaning old config)..."
+                                kubectl delete ingress blockvote-ingress -n 2401098 --ignore-not-found=true
                                 kubectl apply -f ingress.yaml
 
                             '''
