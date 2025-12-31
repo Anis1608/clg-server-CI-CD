@@ -53,7 +53,7 @@ const AdminLayout = () => {
   useEffect(() => {
     if (isProfileOpen) {
       const token = localStorage.getItem("adminToken");
-      axios.get("https://blockvote.site/api/get-details", {
+      axios.get("http://blockvote.imcc.com/api/get-details", {
         headers: {
           Authorization: `Bearer ${token}`,
           "device-id": currentDeviceId,
@@ -67,7 +67,7 @@ const AdminLayout = () => {
   useEffect(() => {
     if (isDeviceDialogOpen) {
       const token = localStorage.getItem("adminToken");
-      axios.get("https://blockvote.site/api/get-active-devices", {
+      axios.get("http://blockvote.imcc.com/api/get-active-devices", {
         headers: {
           Authorization: `Bearer ${token}`,
           "device-id": currentDeviceId,
@@ -84,7 +84,7 @@ const AdminLayout = () => {
     
     try {
       const res = await axios.post(
-        "https://blockvote.site/api/request-device-logout",
+        "http://blockvote.imcc.com/api/request-device-logout",
         { deviceId },
         {
           headers: {
@@ -118,7 +118,7 @@ const AdminLayout = () => {
     setIsProcessing(true);
     try {
       const res = await axios.post(
-        "https://blockvote.site/api/verify-logout-otp",
+        "http://blockvote.imcc.com/api/verify-logout-otp",
         { deviceId: logoutDeviceId, otp },
         {
           headers: {

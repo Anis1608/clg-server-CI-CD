@@ -27,7 +27,7 @@ const VoterLogin = () => {
 
 
     try {
-      const res = await fetch("https://blockvote.site/api/voter-login", {
+      const res = await fetch("http://blockvote.imcc.com/api/voter-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

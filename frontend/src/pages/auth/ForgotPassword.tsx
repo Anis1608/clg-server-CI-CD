@@ -35,7 +35,7 @@ const ForgotPassword = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("https://blockvote.site/api/forgot-password", {
+      const response = await fetch("http://blockvote.imcc.com/api/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const ForgotPassword = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("https://blockvote.site/api/forgot-password/verify", {
+      const response = await fetch("http://blockvote.imcc.com/api/forgot-password/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

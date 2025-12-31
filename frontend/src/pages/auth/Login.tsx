@@ -42,7 +42,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://blockvote.site/api/admin-login", {
+      const response = await fetch("http://blockvote.imcc.com/api/admin-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const Login = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("https://blockvote.site/api/verify-login-otp", {
+      const response = await fetch("http://blockvote.imcc.com/api/verify-login-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

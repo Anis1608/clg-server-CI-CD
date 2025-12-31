@@ -56,7 +56,7 @@ export default function PublicResultPage() {
 
   useEffect(() => {
     axios
-      .get("https://blockvote.site/api/admins")
+      .get("http://blockvote.imcc.com/api/admins")
       .then((res) => setAdmins(res.data.admins))
       .catch(console.error);
   }, []);
@@ -69,7 +69,7 @@ export default function PublicResultPage() {
     setPhaseMessage(null);
 
     axios
-      .get(`https://blockvote.site/api/public-result?adminId=${selectedAdmin._id}`)
+      .get(`http://blockvote.imcc.com/api/public-result?adminId=${selectedAdmin._id}`)
       .then((res) => {
         if (res.data.success === false && res.data.message) {
           if (res.data.message.includes("Registration Phase is in Progress...")) {

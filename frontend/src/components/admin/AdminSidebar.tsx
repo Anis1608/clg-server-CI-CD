@@ -17,7 +17,7 @@ export function AdminSidebar({ onNavigate }: AdminSidebarProps) {
   useEffect(() => {
     const fetchAdmin = async () => {
       try {
-        const res = await axios.get("https://blockvote.site/api/get-details", {
+        const res = await axios.get("http://blockvote.imcc.com/api/get-details", {
           headers: {
             Authorization: `Bearer ${token}`,
             "device-id": deviceId,

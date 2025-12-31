@@ -11,6 +11,13 @@ spec:
     - host: blockvote.imcc.com
       http:
         paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: blockvote-backend-service
+                port:
+                  number: 5000
           - path: /
             pathType: Prefix
             backend:

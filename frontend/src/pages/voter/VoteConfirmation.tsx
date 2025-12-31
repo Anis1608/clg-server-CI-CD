@@ -43,7 +43,7 @@ const VoteConfirmation = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://blockvote.site/api/cast-vote", {
+      const response = await fetch("http://blockvote.imcc.com/api/cast-vote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -52,7 +52,7 @@ export default function AdminResults() {
       const deviceId = typeof window !== 'undefined' ? localStorage.getItem("deviceId") : "";
       
       const response = await axios.get(
-        "https://blockvote.site/api/get-current-phase",
+        "http://blockvote.imcc.com/api/get-current-phase",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -76,7 +76,7 @@ export default function AdminResults() {
       const deviceId = typeof window !== 'undefined' ? localStorage.getItem("deviceId") : "";
       
       const response = await axios.get(
-        "https://blockvote.site/api/admin-result",
+        "http://blockvote.imcc.com/api/admin-result",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -149,7 +149,7 @@ export default function AdminResults() {
       const token = typeof window !== 'undefined' ? localStorage.getItem("adminToken") : "";
       const deviceId = typeof window !== 'undefined' ? localStorage.getItem("deviceId") : "";
       
-      const response = await fetch("https://blockvote.site/api/downloadStellar", {
+      const response = await fetch("http://blockvote.imcc.com/api/downloadStellar", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

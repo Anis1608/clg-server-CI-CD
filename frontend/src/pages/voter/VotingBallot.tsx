@@ -37,7 +37,7 @@ const VotingBallot = () => {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await fetch("https://blockvote.site/api/all-candidate", {
+        const response = await fetch("http://blockvote.imcc.com/api/all-candidate", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

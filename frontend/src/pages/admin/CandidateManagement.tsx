@@ -50,7 +50,7 @@ const CandidateManagement = () => {
 
   const fetchCandidates = async () => {
     try {
-      const res = await axios.get("https://blockvote.site/api/all-candidate", {
+      const res = await axios.get("http://blockvote.imcc.com/api/all-candidate", {
         headers: {
           Authorization: `Bearer ${token}`,
           "device-id": localStorage.getItem("deviceId"),
@@ -150,7 +150,7 @@ const CandidateManagement = () => {
       };
 
       const res = await axios.post(
-        "https://blockvote.site/api/register-candidate",
+        "http://blockvote.imcc.com/api/register-candidate",
         payload,
         {
           headers: {

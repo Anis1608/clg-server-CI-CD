@@ -74,7 +74,7 @@ const VoterManagement = () => {
   const fetchVoters = async () => {
     setisfetchingDataloading(true);
     try {
-      const res = await axios.get("https://blockvote.site/api/allvoter", {
+      const res = await axios.get("http://blockvote.imcc.com/api/allvoter", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
           "device-id": localStorage.getItem("deviceId") || "",
@@ -116,7 +116,7 @@ const VoterManagement = () => {
       const token = localStorage.getItem("adminToken");
       const deviceId = localStorage.getItem("deviceId") || "";
   
-      const response = await fetch("https://blockvote.site/api/register-voter", {
+      const response = await fetch("http://blockvote.imcc.com/api/register-voter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -177,7 +177,7 @@ const VoterManagement = () => {
       const token = localStorage.getItem("adminToken");
       const deviceId = localStorage.getItem("deviceId") || "";
   
-      const response = await fetch("https://blockvote.site/api/bulk-register", {
+      const response = await fetch("http://blockvote.imcc.com/api/bulk-register", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

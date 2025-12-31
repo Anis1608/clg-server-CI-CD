@@ -64,7 +64,7 @@ const AdminRegister = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch("https://blockvote.site/api/admin-register", {
+      const res = await fetch("http://blockvote.imcc.com/api/admin-register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -104,7 +104,7 @@ const AdminRegister = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("https://blockvote.site/api/verify-register-otp", {
+      const response = await fetch("http://blockvote.imcc.com/api/verify-register-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),

@@ -125,12 +125,12 @@ const Dashboard = () => {
 
     // Fetch data in parallel
     axios
-    .get("https://blockvote.site/api/register-votercount", headers)
+    .get("http://blockvote.imcc.com/api/register-votercount", headers)
     .then((res) => setTotalVoters(res.data.totalVoter))
     .catch((err) => handleAuthError(err));
 
     axios
-    .get("https://blockvote.site/api/get-current-phase", headers)
+    .get("http://blockvote.imcc.com/api/get-current-phase", headers)
     .then((res) => {
       setCurrentPhase(res.data.currentPhase);
       setIsLoading(false);
@@ -138,12 +138,12 @@ const Dashboard = () => {
     .catch((err) => handleAuthError(err));
 
   axios
-    .get("https://blockvote.site/api/total-votes", headers)
+    .get("http://blockvote.imcc.com/api/total-votes", headers)
     .then((res) => setTotalVotes(res.data.totalVotes))
     .catch((err) => handleAuthError(err));
 
   axios
-    .get("https://blockvote.site/api/total-candidate", headers)
+    .get("http://blockvote.imcc.com/api/total-candidate", headers)
     .then((res) => setTotalCandidates(res.data.totalCandidates))
     .catch((err) => handleAuthError(err));
 }, [navigate, axios]);
@@ -159,7 +159,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    axios.get(`https://blockvote.site/api/hourly?filter=${filter}` , {
+    axios.get(`http://blockvote.imcc.com/api/hourly?filter=${filter}` , {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         "device-id": localStorage.getItem("deviceId"),
@@ -178,7 +178,7 @@ const Dashboard = () => {
   }, [filter]);
 
   useEffect(() => {
-    axios.get("https://blockvote.site/api/activity-log", {
+    axios.get("http://blockvote.imcc.com/api/activity-log", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         "device-id": localStorage.getItem("deviceId"),
