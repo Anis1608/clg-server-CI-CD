@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: blockvote-ingress
   namespace: "2401098"
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -17,7 +15,7 @@ spec:
               service:
                 name: blockvote-backend-service
                 port:
-                  number: 5000
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
